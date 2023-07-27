@@ -1,0 +1,447 @@
+@charset "utf-8";
+
+.wrapper { /* 그리드시스템 */
+    position: relative; /* position: absolute의 기준_bi-img-txt 기준점 잡으려고 */
+    width: 1200px;
+    margin: 0 auto;
+    padding: 0 10px; /* 첫번째 그리드와 마지막 그리드의 여백 */
+    /* background-color: skyblue; */
+}
+
+.main-image > h2,
+.bi > h2,
+.raw > h2 {
+    font-size: 0;
+}
+
+.bi h3,
+.raw h3 {
+    color: #714425;
+    text-align: center;
+    margin-top: 70px;
+}
+
+.bi h3 + p,
+.raw h3 + p { /* p 색이 안바뀌어서 인접선택자로 + p를 타겟팅 해줌 */
+    color: #867d80;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 25px;
+}
+
+
+/* ========= header ========= */
+header {
+    position: relative; /* mainmenu 기준점 잡아줌 */
+    width: 100%;
+    height: 287px;
+    padding-top: 26px; /* 컨텐츠랑 헤더 부분 */
+    background: url(../images/head_back.jpg) no-repeat center top;
+    background-size: cover; /* 백그라운드 사진  홈페이지 크기에 맞춰*/
+}
+
+/* flex-container */
+.flex-container {
+    display: flex;
+    justify-content: space-between; /* 수평정렬 */
+    align-items: center; /* 수직가운데정렬 */
+}
+
+/* leftmenu */
+.leftmenu {
+    flex: 480px;
+    /* background-color: aquamarine; */
+}
+
+.leftmenu ul {
+    display: flex;
+}
+
+.leftmenu a {
+    padding: 0 30px;
+    border-right: 1px solid #fff;
+    color: #fff;
+    font-size: 18px;
+    /* background-color: blueviolet; */
+}
+
+.leftmenu a:hover,
+.rightmenu a:hover {
+    font-weight: 600;
+    text-decoration: underline;
+}
+
+.leftmenu li:first-child > a {
+    padding-left: 0;
+}
+
+.leftmenu li:last-child > a {
+    padding-right: 0;
+    border-right: 0;
+}
+
+
+
+/* rightmenu */
+.rightmenu {
+    flex: 480px;
+    /* background-color: aquamarine; */
+}
+
+.rightmenu ul {
+    display: flex;
+    justify-content: space-between;
+    width: 445px;
+    margin-left: 63px;
+    /* background-color: blue; */
+}
+
+.rightmenu a {
+    font-size: 14px;
+    color: #fff;
+}
+
+/* mainmenu */
+.mainmenu {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: #543e27;
+}
+
+.gnb {
+    display: flex;
+    height: 75px;
+    align-items: center;
+}
+
+.gnb a {
+    width: 200px;
+    color: #aca276;
+    text-align: center;
+    border-right: 1px solid #fff;
+}
+
+.gnb a:hover {
+    color: #fff;
+    text-decoration: underline ;
+}
+
+.gnb li:first-child a,
+.gnb li:last-child a {
+    width: 190px;
+}
+
+.gnb li:last-child a {
+    border-right: 0;
+    font-weight: 600;
+}
+
+
+
+
+/* ========= main ========= */
+main {
+    width: 100%;
+    /* height: 3088px; */
+    /* background-color: lightgreen; */
+}
+
+/* centermenu */
+.centermenu ul {
+    display: flex;
+    width: 696px;
+    margin: 32px auto; /* a의 width값 X 메뉴 개수 = width값으로 설정후 가운데 정렬 */
+    /* background-color: bisque; */
+}
+
+.centermenu ul > li > a {
+    width: 174px;
+    padding: 18px 0;
+    text-align: center;
+    border: 1px solid black;
+    border-right: 0; /* 나란히 나열되어 2px로 두꺼워진 보더 오른쪽만 다 없애기 */
+}
+
+.centermenu a:hover {
+    color: #fff;
+    font-weight: bold;
+    background-color: #bd8b5e;
+}
+
+.centermenu ul > li:last-child > a { /* 마지막 보더 오른쪽도 없어져서 다시 넣어줌 */
+    border: 1px solid black;
+}
+
+
+/* main-image */
+.main-image img {
+    width: 100%;
+}
+
+
+/* bi */
+.bi img {
+    width: 100%;
+}
+
+.bi .bi-img-txt {
+    position: absolute;
+    left: 180px; top: 210px;
+    color: #ba8b53;
+    text-align: center;
+}
+
+.bi .bi-img-txt > strong {
+    margin-bottom: 30px;
+    font-size: 18px;
+}
+
+.bi .bi-img-txt > p {
+    font-size: 15px;
+}
+
+.bi-desc {
+    display: flex;
+    margin-top: 30px;
+}
+
+.bi-desc > div {
+    display: flex;
+    align-items: center;
+    width: 50%;
+}
+
+.bi-desc div > img {
+    width: 128px; height: 130px;
+}
+
+.bi-desc div > p {
+    font-size: 14px;
+    padding-left: 10px;
+}
+
+
+/*raw*/
+.raw-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: minmax(100px, auto);
+    grid-gap: 20px 20px;
+    margin-bottom: 112px;
+}
+
+.raw-list > div {
+    display: flex;
+    border: 1px solid #867d80;
+}
+
+.raw-list .raw-txt {
+    position: relative;
+    padding: 27px;
+    /* background-color: #bd8b5e; */
+}
+
+
+.raw-list .raw-txt > h4 {
+    margin-bottom: 17px;
+}
+
+.raw-list .raw-txt > p {
+    text-align: justify;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.raw-list .raw-txt > .product {
+    position: absolute;
+    bottom: 30px;
+    font-size: 14px;
+    color: #c9a382;
+}
+
+/* ========= footer ========= */
+footer {
+    position: relative;
+    width: 100%;
+    height: 292px;
+    /* background-color: pink; */
+}
+
+/* .menu-sns */
+.menu-sns {
+    border-top: 1px solid #867d80;
+    border-bottom: 1px solid #867d80;
+}
+
+.menu-sns-flex-box {
+    display: flex;
+    height: 52px;
+    justify-content: space-between; /* 수평 정렬 */
+    align-items: center; /* 수직정렬 */
+}
+
+.info-menu {
+    width: 920px;
+    /* background-color: aqua; */
+}
+
+.info-menu ul {
+    display: flex;
+    justify-content: space-between;
+}
+
+.info-menu a {
+    font-size: 13px;
+}
+
+.info-menu a:hover {
+    text-decoration: underline;
+}
+
+.info-menu li:nth-child(odd) a {
+    color: #543e27;
+}
+
+.info-menu li:last-child { /* language 수평 맞추려고 */
+    margin-top: -1px;
+}
+
+.info-menu select {
+    border: 0;
+    color: #543e27;  /* a가 아니니라서 색을 줘야함 */
+    background: transparent;
+}
+
+.sns {
+    width: 180px;
+    /* background-color: blue; */
+}
+
+.sns a {
+    display: inline-block;
+    width: 30px; height: 30px;
+    line-height: 30px; /* 수평 width, height 값과 같은값을 주면 됨 */
+    border-radius: 50%; /* 동글동글 */
+    text-align: center;
+    color: #fff;
+    background-color: #9d9d9d;
+}
+
+.sns a:hover {
+    color: #c9a382;
+    background-color: black;
+}
+
+.sns .comma {
+    display: inline-block;
+    font: 30px 'HY견명조';
+    margin-top: -10px; /* 글자크기가 갖는 행간등의 영향으로 -값을 줘 맞춤 */
+}
+
+
+/* logo-info-sec-flexbox */
+.logo-info-sec-flexbox {
+    display: flex;
+    height: 172px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.info > .business-info, /* 푸터 공통은 맨위로 안올려도 됨 */
+.info > address,
+.info > .copyright,
+.security > h4
+.security > p {
+    font-size: 12px;
+    line-height: 2;
+}
+
+.info a {
+    display: inline-block;
+}
+
+.business-info a.info-check,
+address > a {
+    color: #c9a382;
+}
+
+.business-info a:hover,
+address a:hover,
+.security a:hover {
+    text-decoration: underline;
+}
+
+.info {
+    width: 652px;
+    /* background-color: palevioletred; */
+}
+
+.security {
+    width: 380px;
+    padding-left: 30px;
+    padding-right: 40px;
+    /* background-color: palevioletred; */
+}
+
+.security > h4 {
+    font-size: 14px;
+}
+
+.security .register-check {
+    color: #697523;
+    font-size: 13px;
+}
+
+/* fix-menu */
+.fix-menu {
+    position: fixed;
+    right: 100px;
+    bottom: 100px;
+}
+
+.fix-menu li > a {
+    width: 96px; height: 38px;
+    line-height: 38px; /* height 값이랑 같게주면 됨 */
+    text-align: center;
+}
+
+.fix-menu li:first-child > a {
+    color: white;
+    margin-bottom: 10px;
+    border: 1px solid #515a1b;
+    background-color: #699006;
+}
+
+.fix-menu li:first-child > a:hover,
+.fix-menu li:last-child > a:hover {
+    text-decoration: underline;
+}
+
+.fix-menu li:last-child > a {
+    color: #d8cbb9;
+    border: 1px solid #bca380;
+    background-color: white;
+}
+
+
+/* foot-bottom */
+.foot-bottom {
+    position: absolute;
+    bottom: 0;
+    width: 100%; height: 70px;
+    background-color: #3c2f29;
+}
+
+.foot-bottom p {
+    color: #9e9493;
+    line-height: 70px;
+}
+
+.foot-bottom h3 {
+    position: absolute;
+    left: 50%; top: 50%;
+    font-size: 22px;
+    color: #fff;
+    transform: translate(-50%, -50%); /* x수평, y수직 */
+}

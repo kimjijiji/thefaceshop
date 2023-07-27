@@ -1,0 +1,73 @@
+@charset "utf-8";
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font: 16px '맑은 고딕';
+}
+
+li,
+ul,
+ol {
+    list-style: none;
+}
+
+table, th, td{
+    border: 1px solid #867d80;
+    border-collapse: collapse;
+}
+
+a {
+    display: block;
+    text-decoration: none;
+    color: black;
+}
+
+strong {
+    display: block;
+}
+
+img,
+input,
+textarea,
+button {
+    vertical-align: middle;
+}
+
+h1 {
+    font-size: 32px;
+}
+
+h2 {
+    font-size: 30px;
+}
+
+h3 { /* 디자인이기 때문에 글자크기가 h1 font-size가 제일 커야한다는건 없음 */
+    font-size: 36px;
+    font-weight: normal;
+}
+
+h4 {
+    font-size: 18px;
+}
+
+p {
+    line-height: 1.4;
+}
+
+address {
+    font-style: normal;
+}
+
+header,
+nav,
+main,
+article,
+aside,
+section,
+footer {
+    display: block;
+}
